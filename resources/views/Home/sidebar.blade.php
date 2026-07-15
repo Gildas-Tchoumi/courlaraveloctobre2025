@@ -16,7 +16,7 @@
               </li>
               <li class="has-sub nav-item"><a href="#"><i class="icon-screen-desktop"></i><span data-i18n="" class="menu-title">Apps</span></a>
                 <ul class="menu-content">
-                  <li><a href="chat.html" class="menu-item">Chat</a>
+                  <li><a href="{{ route('list-category') }}" class="menu-item">List category</a>
                   </li>
                   <li><a href="taskboard.html" class="menu-item">Taskboard</a>
                   </li>
