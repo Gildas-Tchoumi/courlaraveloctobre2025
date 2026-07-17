@@ -59,6 +59,49 @@ class CategoryController extends Controller
 
     }
 
+    public function edit($id)
+    {
+
+        // recuperer la categorie a modifier
+        $category = Category::find($id);
+
+
+        // tester si la categorie existe
+        if (!$category) {
+            return redirect()->route('list-category')->with('error', 'Category not found');
+        }
+
+        return view('Categories.edit', compact('category'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        // validation des données
+        $request->validate([
+            'name' => 'required',
+            'description' => 'nullable',
+        ]);
+
+        // recuperer la categorie a modifier
+        $category = Category::find($id);
+
+        // tester si la categorie existe
+        if (!$category) {
+            return redirect()->route('list-category')->with('error', 'Category not found');
+        }
+
+        // mettre a jour la categorie
+        $category->update([
+            'name' => $request->name,
+            'description' => $request->description,
+        ]);
+
+        // rediriger vers la liste des categories
+        return redirect()->route('list-category')->with('success', 'Category updated successfully');
+    }
+
+
+
     public function destroy($id) {
         // recuperer la categorie a supprimer
         $category = Category::find($id);

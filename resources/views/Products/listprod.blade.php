@@ -5,7 +5,7 @@
         <div class="content-wrapper">
             <div class="container-fluid"><!--Statistics cards Starts-->
                 <div class="row">
-                    <h1>List Categories</h1>
+                    <h1>List Productst</h1>
                     <!--Basic Table Starts-->
                     <section id="simple-table">
                         <div class="row">
@@ -25,27 +25,34 @@
                                         </p>
                                     </div>
                                     <div class="ml-4">
-                                        <a href="{{ route('create-category') }}" class="btn btn-primary">Add Category</a>
+                                        <a href="{{ route('create-product') }}" class="btn btn-primary">Add Product</a>
                                     </div>
                                     <div class="card-body">
                                         <div class="card-block">
                                             <table class="table">
                                                 <thead>
                                                     <tr>
-                                                        {{-- <th>#</th> --}}
+                                                        <th>Code</th>
                                                         <th>Name</th>
+                                                        <th>Price</th>
+                                                        <th>Quantity</th>
+                                                        <th>Category</th>
                                                         <th>Description</th>
                                                         <th>Actions</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                   @foreach ($categories as $cat)
+                                                   @foreach ($products as $product)
                                                        <tr>
-                                                           <td>{{ $cat->name }}</td>
-                                                           <td>{{ $cat->description }}</td>
+                                                           <th>{{ $product->code }}</th>
+                                                           <td>{{ $product->name }}</td>
+                                                           <td>{{ $product->price }}</td>
+                                                           <td>{{ $product->quantity }}</td>
+                                                           <td>{{ $product->category_id }}</td>
+                                                           <td>{{ $product->description }}</td>
                                                            <td>
-                                                               <a href="{{ route('edit-category', $cat->id) }}" class="btn btn-sm btn-outline-primary">Edit</a>
-                                                               <a href="{{ route('destroy-category', $cat->id) }}" class="btn btn-sm btn-outline-danger">Delete</a>
+                                                               <a href="#" class="btn btn-sm btn-outline-primary">Edit</a>
+                                                               <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
                                                            </td>
                                                        </tr>
                                                    @endforeach

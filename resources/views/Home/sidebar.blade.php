@@ -18,7 +18,7 @@
                 <ul class="menu-content">
                   <li><a href="{{ route('list-category') }}" class="menu-item">List category</a>
                   </li>
-                  <li><a href="taskboard.html" class="menu-item">Taskboard</a>
+                  <li><a href="{{ route('list-product') }}" class="menu-item">List Product</a>
                   </li>
                   <li><a href="calendar.html" class="menu-item">Calendar</a>
                   </li>
