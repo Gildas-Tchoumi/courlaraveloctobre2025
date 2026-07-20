@@ -2,7 +2,11 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RolesController;
+use App\Http\Controllers\UtilisateurController;
 use Illuminate\Support\Facades\Route;
+
+
 
 
 
@@ -27,3 +31,13 @@ Route::post('update-category/{id}', [CategoryController::class, 'update'])->name
 Route::get('list-product', [ProductController::class, 'index'])->name('list-product');
 Route::get('create-product', [ProductController::class, 'create'])->name('create-product');
 Route::post('store-product', [ProductController::class, 'store'])->name('store-product');
+
+
+//Routes pour les utilisateurs
+Route::get('list-utilisateur', [UtilisateurController::class, 'index'])->name('list-utilisateur');
+Route::get('create-utilisateur', [UtilisateurController::class, 'create'])->name('create-utilisateur');
+
+//Routes pour les roles
+Route::get('list-roles', [RolesController::class, 'index'])->name('list-roles');
+Route::get('create-roles', [RolesController::class, 'create'])->name('create-roles');
+Route::get('asign-roles', [RolesController::class, 'viewasign'])->name('asign-roles');

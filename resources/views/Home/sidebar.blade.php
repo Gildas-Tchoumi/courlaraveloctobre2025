@@ -24,11 +24,11 @@
                   </li>
                 </ul>
               </li>
-              <li class="has-sub nav-item"><a href="#"><i class="icon-magnet"></i><span data-i18n="" class="menu-title">UI Kit</span></a>
+              <li class="has-sub nav-item"><a href="#"><i class="icon-magnet"></i><span data-i18n="" class="menu-title">Parametres </span></a>
                 <ul class="menu-content">
-                  <li><a href="color-palette.html" class="menu-item">Color Palette</a>
+                  <li><a href="{{ route('list-utilisateur') }}" class="menu-item">List Users</a>
                   </li>
-                  <li><a href="grids.html" class="menu-item">Grid</a>
+                  <li><a href="{{ route('list-roles') }}" class="menu-item">List Roles</a>
                   </li>
                   <li><a href="typography.html" class="menu-item">Typography</a>
                   </li>

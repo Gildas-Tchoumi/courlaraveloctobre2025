@@ -5,7 +5,7 @@
         <div class="content-wrapper">
             <div class="container-fluid"><!--Statistics cards Starts-->
                 <div class="row">
-                    <h1>List Productst</h1>
+                    <h1>List Roles</h1>
                     <!--Basic Table Starts-->
                     <section id="simple-table">
                         <div class="row">
@@ -24,38 +24,22 @@
                                             styles.
                                         </p>
                                     </div>
-                                    <div class="ml-4">
-                                        <a href="{{ route('create-product') }}" class="btn btn-primary">Add Product</a>
+                                     <div class="ml-4">
+                                        <a href="{{ route('create-roles') }}" class="btn btn-primary">Add Role</a>
                                     </div>
                                     <div class="card-body">
                                         <div class="card-block">
                                             <table class="table">
                                                 <thead>
                                                     <tr>
-                                                        <th>Code</th>
+                                                        {{-- <th>#</th> --}}
                                                         <th>Name</th>
-                                                        <th>Price</th>
-                                                        <th>Quantity</th>
-                                                        <th>Category</th>
                                                         <th>Description</th>
                                                         <th>Actions</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                   @foreach ($products as $product)
-                                                       <tr>
-                                                           <th>{{ $product->code }}</th>
-                                                           <td>{{ $product->name }}</td>
-                                                           <td>{{ $product->price }}</td>
-                                                           <td>{{ $product->quantity }}</td>
-                                                           <td>{{ $product->category->name }}</td>
-                                                           <td>{{ $product->description }}</td>
-                                                           <td>
-                                                               <a href="#" class="btn btn-sm btn-outline-primary">Edit</a>
-                                                               <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
-                                                           </td>
-                                                       </tr>
-                                                   @endforeach
+                                                   
                                                 </tbody>
                                             </table>
                                         </div>
@@ -71,4 +55,3 @@
         </div>
     </div>
 @endsection
-

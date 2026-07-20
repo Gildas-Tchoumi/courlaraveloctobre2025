@@ -5,7 +5,7 @@
         <div class="content-wrapper">
             <div class="container-fluid"><!--Statistics cards Starts-->
                 <div class="row">
-                    <h1>List Productst</h1>
+                    <h1>List users</h1>
                     <!--Basic Table Starts-->
                     <section id="simple-table">
                         <div class="row">
@@ -24,38 +24,32 @@
                                             styles.
                                         </p>
                                     </div>
+
                                     <div class="ml-4">
-                                        <a href="{{ route('create-product') }}" class="btn btn-primary">Add Product</a>
+                                        <a href="{{ route('create-utilisateur') }}" class="btn btn-primary">Add User</a>
                                     </div>
                                     <div class="card-body">
                                         <div class="card-block">
                                             <table class="table">
                                                 <thead>
                                                     <tr>
-                                                        <th>Code</th>
-                                                        <th>Name</th>
-                                                        <th>Price</th>
-                                                        <th>Quantity</th>
-                                                        <th>Category</th>
-                                                        <th>Description</th>
+                                                        {{-- <th>#</th> --}}
+                                                        <th>First Name</th>
+                                                        <th>Sexe</th>
+                                                        <th>Email</th>
+                                                        <th>Roles</th>
                                                         <th>Actions</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                   @foreach ($products as $product)
-                                                       <tr>
-                                                           <th>{{ $product->code }}</th>
-                                                           <td>{{ $product->name }}</td>
-                                                           <td>{{ $product->price }}</td>
-                                                           <td>{{ $product->quantity }}</td>
-                                                           <td>{{ $product->category->name }}</td>
-                                                           <td>{{ $product->description }}</td>
-                                                           <td>
-                                                               <a href="#" class="btn btn-sm btn-outline-primary">Edit</a>
-                                                               <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
-                                                           </td>
-                                                       </tr>
-                                                   @endforeach
+                                                    <tr>
+                                                        {{-- <th>#</th> --}}
+                                                        <td>Nono</td>
+                                                        <td>Masculin</td>
+                                                        <td>nono@example.com</td>
+                                                        <td> <a href="{{ route('asign-roles') }}" class="btn btn-sm btn-outline-primary">add</a> </td>
+                                                        <td>Actions</td>
+                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -71,4 +65,3 @@
         </div>
     </div>
 @endsection
-
