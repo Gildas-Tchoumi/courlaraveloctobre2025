@@ -18,7 +18,7 @@
                             <div class="card-body">
                                 <div class="px-3">
 
-                                    <form class="form" action="#" method="post">
+                                    <form class="form" action="{{ route('store-utilisateur') }}" method="post">
                                         @csrf
                                         <div class="form-body">
 
@@ -26,6 +26,11 @@
                                                 <label for="firstname">firstName</label>
                                                 <input type="text" id="firstname" class="form-control round"
                                                     name="firstname">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="lastname">lastname</label>
+                                                <input type="text" id="lastname" class="form-control round"
+                                                    name="lastname">
                                             </div>
                                             <div class="form-group">
                                                 <label for="sexe">Sexe</label>

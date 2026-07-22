@@ -35,6 +35,7 @@
                                                     <tr>
                                                         {{-- <th>#</th> --}}
                                                         <th>First Name</th>
+                                                        <th>Last Name</th>
                                                         <th>Sexe</th>
                                                         <th>Email</th>
                                                         <th>Roles</th>
@@ -42,14 +43,30 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        {{-- <th>#</th> --}}
+                                                    @foreach ($utilisateurs as $utilisateur)
+                                                        <tr>
+                                                            <td>{{ $utilisateur->firstname }}</td>
+                                                            <td>{{ $utilisateur->lastname }}</td>
+                                                            <td>{{ $utilisateur->sexe }}</td>
+                                                            <td>{{ $utilisateur->email }}</td>
+                                                            <td> <a href="{{ route('asign-roles', $utilisateur->id) }}" class="btn btn-sm btn-outline-primary">add</a> </td>
+                                                            <td>
+                                                                <a href="#" class="btn btn-sm btn-outline-info">Detail</a>
+                                                                <a href="#" class="btn btn-sm btn-outline-primary">Edit</a>
+                                                                <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+
+                                                            </td>
+                                                        </tr>
+                                                        
+                                                    @endforeach
+                                                    {{-- <tr>
+                                                        
                                                         <td>Nono</td>
                                                         <td>Masculin</td>
                                                         <td>nono@example.com</td>
                                                         <td> <a href="{{ route('asign-roles') }}" class="btn btn-sm btn-outline-primary">add</a> </td>
                                                         <td>Actions</td>
-                                                    </tr>
+                                                    </tr> --}}
                                                 </tbody>
                                             </table>
                                         </div>

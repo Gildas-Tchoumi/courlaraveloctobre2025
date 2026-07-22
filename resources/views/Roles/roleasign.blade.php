@@ -5,7 +5,7 @@
         <div class="content-wrapper">
             <div class="container-fluid"><!--Statistics cards Starts-->
                 <div class="row">
-                    <h1>Assign Role to User : Nom de l'utilisateur</h1>
+                    <h1>Assign Role to User : {{ $utilisateur->firstname }}</h1>
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-header">
@@ -18,34 +18,19 @@
                             <div class="card-body">
                                 <div class="px-3">
 
-                                    <form action="#" method="POST"
+                                    <form action="{{ route('asign-role', $utilisateur->id) }}" method="POST"
                                         class="form">
                                         @csrf
                                         <div class="form-body">
 
-                                            
+                                            @foreach ($roles as $role)
                                                 <div class="form-check">
                                                     <input class="" id="name" type="checkbox" name="role_id[]"
-                                                        value="">
-                                                    <label class="form-check-label">Role Name</label>
+                                                        value="{{ $role->id }}">
+                                                    <label class="form-check-label">{{ $role->name }}</label>
                                                 </div>
-                                                <div class="form-check">
-                                                    <input class="" id="name" type="checkbox" name="role_id[]"
-                                                        value="">
-                                                    <label class="form-check-label">Role Name</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="" id="name" type="checkbox" name="role_id[]"
-                                                        value="">
-                                                    <label class="form-check-label">Role Name</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="" id="name" type="checkbox" name="role_id[]"
-                                                        value="">
-                                                    <label class="form-check-label">Role Name</label>
-                                                </div>
-                                            
-
+                                            @endforeach
+                                                
                                         </div>
 
                                         <div class="form-actions right">

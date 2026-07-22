@@ -36,8 +36,11 @@ Route::post('store-product', [ProductController::class, 'store'])->name('store-p
 //Routes pour les utilisateurs
 Route::get('list-utilisateur', [UtilisateurController::class, 'index'])->name('list-utilisateur');
 Route::get('create-utilisateur', [UtilisateurController::class, 'create'])->name('create-utilisateur');
+Route::post('store-utilisateur', [UtilisateurController::class, 'store'])->name('store-utilisateur');
 
 //Routes pour les roles
 Route::get('list-roles', [RolesController::class, 'index'])->name('list-roles');
 Route::get('create-roles', [RolesController::class, 'create'])->name('create-roles');
-Route::get('asign-roles', [RolesController::class, 'viewasign'])->name('asign-roles');
+Route::post('store-roles', [RolesController::class, 'store'])->name('store-roles');
+Route::get('asign-roles/{id}', [RolesController::class, 'viewasign'])->name('asign-roles');
+Route::post('asign-roles/{id}', [RolesController::class, 'asign'])->name('asign-role');

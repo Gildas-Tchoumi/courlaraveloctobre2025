@@ -22,7 +22,7 @@
                             <div class="card-body">
                                 <div class="px-3">
 
-                                    <form class="form" action="#" method="post">
+                                    <form class="form" action="{{ route('store-roles') }}" method="post">
                                         @csrf
                                         <div class="form-body">
 
